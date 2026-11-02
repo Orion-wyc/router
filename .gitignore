@@ -57,3 +57,6 @@ share/python-wheels/
 *.egg
 MANIFEST
 uv.lock
+
+# Local demo / test artifacts
+output/
