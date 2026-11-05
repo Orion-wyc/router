@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Minimal OpenAI-compatible worker used by the local PD demo.
+"""Minimal OpenAI-compatible worker used by the local router demos.
 
 This worker does not run a model. It only returns deterministic responses so
-that the router's prefill/decode routing can be exercised on a CPU-only host.
+that the router's PD or regular routing can be exercised on a CPU-only host.
 """
 
 from __future__ import annotations
@@ -18,10 +18,12 @@ from fastapi.responses import JSONResponse, PlainTextResponse, StreamingResponse
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Mock prefill/decode worker")
+    parser = argparse.ArgumentParser(description="Mock prefill/decode/regular worker")
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, required=True)
-    parser.add_argument("--role", choices=("prefill", "decode"), required=True)
+    parser.add_argument(
+        "--role", choices=("prefill", "decode", "regular"), required=True
+    )
     parser.add_argument("--worker-id", default=None)
     parser.add_argument("--model", default="mock-pd-model")
     parser.add_argument("--latency-ms", type=int, default=0)
