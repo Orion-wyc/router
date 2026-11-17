@@ -1,0 +1,38 @@
+{
+  "do_remote_decode": false,
+  "do_remote_prefill": true,
+  "transfer_id": "transfer-123",
+  "remote_request_id": "request-123",
+  "remote_engine_id": "prefill-0",
+  "source_rank": 0,
+  "remote_block_ids": [17, 18],
+  "num_prompt_blocks": 2,
+  "remote_state_id": 3,
+  "state_mode": "raw_slot",
+  "state_bytes": 2048,
+  "num_computed_tokens": 32,
+  "swa_valid_start": 0,
+  "first_sampled_token": 1234,
+  "agent_metadata": {
+    "engine_id": "prefill-0",
+    "host": "192.0.2.10",
+    "handshake_port": 0,
+    "te_rpc_port": 19001,
+    "segment": "192.0.2.10:19001",
+    "blocks_base": "0x00007f0000000000",
+    "states_base": "0x00007f0001000000",
+    "block_bytes": 4096,
+    "state_bytes": 2048,
+    "state_send_base": 0,
+    "state_send_bytes": 0,
+    "swa_block_size": 128,
+    "compress_block_size": {
+      "1": 128
+    },
+    "cp_size": 1,
+    "pp_size": 1,
+    "num_blocks": 64,
+    "layout_version": "example-layout-v1",
+    "registration_generation": 7
+  }
+}

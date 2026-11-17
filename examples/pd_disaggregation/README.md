@@ -132,3 +132,5 @@ vllm-router \
 ```
 
 真实 PD 需要 vLLM 配置 NIXL/Mooncake 等 KV connector，并依赖 GPU、RDMA/NCCL 环境；本 demo 不做 KV 传输，不能用于性能评估。
+
+如果要验证 P 响应里的 `kv_transfer_params` 是否被 Router 原样透传到 D，见 [pd_kv_handoff](../pd_kv_handoff/)。
